@@ -26,6 +26,10 @@ app.get('/api/messages', (req, res) => {
   res.json(JSON.parse(fs.readFileSync(DATA_FILE, 'utf8')))
 })
 
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', message: 'Hilda Portfolio backend is running' })
+})
+
 app.get('/health', (req, res) => res.json({ status: 'ok' }))
 
 const PORT = process.env.PORT || 5000
